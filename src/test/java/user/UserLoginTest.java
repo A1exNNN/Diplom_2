@@ -57,7 +57,6 @@ public class UserLoginTest extends BaseTest {
         // Проверяем, что accessToken был возвращен
         String accessToken = response.jsonPath().getString(TestConstants.FIELD_ACCESS_TOKEN);
         assertNotNull(accessToken);
-//        assertTrue(accessToken.startsWith(TestConstants.BEARER_PREFIX));
     }
 
     @Test

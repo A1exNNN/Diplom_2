@@ -49,7 +49,7 @@ public class BaseTest {
     // Удаление созданного пользователя
     protected void deleteUserAfterTest(UserCredentials credentials, String accessToken) {
         if (accessToken != null) {
-            ApiSteps.deleteUser(credentials, accessToken);
+            ApiSteps.deleteUser(accessToken);
         }
     }
 }

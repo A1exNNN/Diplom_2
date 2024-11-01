@@ -1,19 +1,18 @@
 package utils;
 
+import io.qameta.allure.Param;
 import io.qameta.allure.Step;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import models.Order;
 import models.User;
 import models.UserCredentials;
-import io.qameta.allure.Param;
 
 import static io.qameta.allure.model.Parameter.Mode.HIDDEN;
-
-
+import static java.net.HttpURLConnection.HTTP_ACCEPTED;
+import static java.net.HttpURLConnection.HTTP_OK;
 import static org.hamcrest.Matchers.anyOf;
 import static org.hamcrest.Matchers.is;
-import static java.net.HttpURLConnection.*;
 
 // Класс для выполнения запросов API
 public class ApiSteps {
@@ -42,7 +41,7 @@ public class ApiSteps {
     }
 
     @Step("Удаление пользователя")
-    public static void deleteUser(UserCredentials credentials, @Param(mode = HIDDEN) String accessToken) {
+    public static void deleteUser(@Param(mode = HIDDEN) String accessToken) {
         // Печатаем токен для проверки
         System.out.println("Access Token: " + accessToken);
         RestAssured
